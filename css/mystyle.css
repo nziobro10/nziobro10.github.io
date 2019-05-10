@@ -1,28 +1,29 @@
 body {
-	background: #F54F1A none repeat scroll 50% 50%;
+	background: #000000 none repeat scroll 50% 50%;
 }
 
 .one {
-	background: #44F56F none repeat scroll 50% 50%;
+	background: #000000 none repeat scroll 50% 50%;
 	font-family: Tahoma, Geneva, sans-serif;
-font-size: 16px;
-letter-spacing: 4.6px;
+font-size: 14px;
+letter-spacing: 2px;
 word-spacing: 4px;
-color: #000000;
+color: #ffffff;
 font-weight: 400;
 text-decoration: none;
 font-style: normal;
 font-variant: small-caps;
 text-transform: capitalize;
-padding: 20px 20px;
+padding: 50px 50px;
+text-align: center;
 }
 .one:hover {
-	background: #3573F5 none repeat scroll 50% 50%;
+	background: rgb(138, 146, 165) none repeat scroll 10% 50%;
 }
 h1 {
  font-family: Tahoma, Geneva, sans-serif;
 font-size: 16px;
-letter-spacing: 4.6px;
+letter-spacing: 5px;
 word-spacing: 4px;
 color: #000000;
 font-weight: 400;
@@ -30,9 +31,10 @@ text-decoration: none;
 font-style: normal;
 font-variant: small-caps;
 text-transform: capitalize;
+text-align: center;
 }
 
 h1:hover {
-  opacity: 1.0;
+  opacity: 0.8;
   filter: alpha(opacity=100); /* For IE8 and earlier */
 }
