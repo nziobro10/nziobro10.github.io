@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>[Odsluch] QDEE to nie kazdy</title>
+<title>[Odsluch] QDEE to nie każdy</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -28,36 +28,42 @@ function stop(){
     for(i=0; i<sounds.length; i++) sounds[i].pause();
 }
 </script>
-<body>
+<body class="w3-light-gray">
 
 <!-- !PAGE CONTENT! -->
-<div class="w3-content" style="max-width:1500px">
+<div class="w3-content w3-light-gray" style="max-width:1500px">
 
 <!-- Header -->
 <header class="w3-panel w3-center w3-opacity" style="padding:16px 8px">
-  <h1 class="w3-xlarge">QDEE - To nie kazdy</h1>
-  <h1 class="w3-medium">Odsluch</h1>
-  
-  
+  <h1 class="w3-xlarge w3-bold">QDEE - To nie każdy</h1>
+  <h1 class="w3-medium">[ Odsłuch ]</h1>
   <div>
     <div class="w3-padding-16">
-      <a href="#" class="w3-button w3-block">1. To nie kazdy</a>
-      <a href="#" class="w3-button w3-block">2. Dzungla</a>
-      <a href="#" class="w3-button w3-block">3. Powplatani</a>
-      <a href="#" class="w3-button w3-block">4. W przestworzach</a>
-	  <a href="#" class="w3-button w3-block">5. Mimo to nie jade na lekach</a>
-      <a href="#" class="w3-button w3-block">6. Return</a>
-	  <a href="#" class="w3-button w3-block">7. Bo lubie</a>
-      <a href="#" onclick="play('8')" class="w3-button w3-block">8. Trzymam sie nurtu</a>
-	  <a href="#" class="w3-button w3-block">9. Nie chce w te strone</a>
-	  <a href="#" onclick="play('10')" class="w3-button w3-block">10. Return 2</a>
-	  <a href="#" onclick="play('11')" class="w3-button w3-block">11. W przestworzach (RMX)</a>
-	  <a href="#" onclick="stop()" class="w3-button w3-block w3-bold w3-large w3-padding-32">STOP</a>
+      <a href="#" onclick="play('1'); return false" class="w3-button w3-block">1. To nie kazdy</a>
+      <a href="#" onclick="play('2'); return false" class="w3-button w3-block">2. Dzungla</a>
+      <a href="#" onclick="play('3'); return false" class="w3-button w3-block">3. Powplatani</a>
+      <a href="#" onclick="play('4'); return false" class="w3-button w3-block">4. W przestworzach</a>
+	  <a href="#" onclick="play('5'); return false" class="w3-button w3-block">5. Mimo to nie jade na lekach</a>
+      <a href="#" onclick="play('6'); return false" class="w3-button w3-block">6. Return</a>
+	  <a href="#" onclick="play('7'); return false" class="w3-button w3-block">7. Bo lubie</a>
+      <a href="#" onclick="play('8'); return false" class="w3-button w3-block">8. Trzymam sie nurtu</a>
+	  <a href="#" onclick="play('9'); return false" class="w3-button w3-block">9. Nie chce w te strone</a>
+	  <a href="#" onclick="play('10'); return false" class="w3-button w3-block">10. Return 2</a>
+	  <a href="#" onclick="play('11'); return false" class="w3-button w3-block">11. W przestworzach (RMX)</a>
+	  <a href="#" onclick="stop(); return false" class="w3-button w3-block w3-bold w3-large w3-padding-16">STOP</a>
     </div>
 	<!-- Audio  Files-->
-	
+		<audio id="1" src="audio/1.mp3"/>
+		<audio id="2" src="audio/2.mp3"/>
+		<audio id="3" src="audio/3.mp3"/>
+		<audio id="4" src="audio/4.mp3"/>
+		<audio id="5" src="audio/5.mp3"/>
+		<audio id="6" src="audio/6.mp3"/>
+		<audio id="7" src="audio/7.mp3"/>
 		<audio id="8" src="audio/8.mp3"/>
+		<audio id="9" src="audio/9.mp3"/>
 		<audio id="10" src="audio/10.mp3"/>
+		<audio id="11" src="audio/11.mp3"/>
 	
 	
   </div>
@@ -65,8 +71,8 @@ function stop(){
 
 <!-- Photo Grid -->
 
-<div class="w3-row-padding w3-grayscale" style="margin-bottom:128px">
-  <div class="w3-center">
+<div class="w3-row-padding w3-grayscale" style="margin-bottom:32px">
+  <div class="w3-block w3-center w3-medium">
     <img src="images/QDEE_COMING_SOON.jpg" style="width:50%">
 	<!--
     <img src="/w3images/rocks.jpg" style="width:100%">
@@ -91,13 +97,15 @@ function stop(){
 
   
 <!-- End Page Content -->
-<div id="bio">
-<p class="w3-small w3-padding-32 w3-center">QDEE raper z ostrowa o nieograniczonej inteligencji i ilosci punchy. Zniszczy twoja glowe nietuzinkowym bujajcym rapem. Pusc to w pojazdach i w domu ziomek!</p>
+<div id="bio" class="w3-content w3-center w3-opacity" style="width:70%">
+<h1>BIO</h1>
+<p>Dwaylocos i QDEE przedstawiają pierwszy solowy album pod tytułem QDEE - To nie każdy. </p>
 </div>
 
 <!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-large"> 
+<footer class="w3-container w3-gray w3-center w3-padding-32 w3-large"> 
   <a href="http://www.facebook.com/dwaylocos"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+  <a href="http://www.youtube.com/dwaylocos"><i class="fa fa-youtube w3-hover-opacity"></i></a>
 </footer>
 
 </body>
