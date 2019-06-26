@@ -15,15 +15,13 @@ h1 {letter-spacing: 3px}
 	var sounds = document.getElementsByTagName('audio');
 	var buttons = document.getElementsByClassName("w3-button");
 function play(id) {
-    for(i=0; i<sounds.length; i++) sounds[i].pause();
-	for(i=0; i<buttons.length; i++) buttons[i].style.removeProperty("background");
-	for(i=0; i<buttons.length; i++) buttons[i].style.removeProperty("color");
+    stop();
     var audio = document.getElementById(id);
 	var button = document.getElementById("b" + id);
 	
     if (audio.paused) {
 		audio.currentTime = 0;
-        for(i=id; i<sounds.length; i++) audio.play(i);
+        audio.play();
 		button.style.background = 'white';
 		button.style.color = 'black';	
     } else{
