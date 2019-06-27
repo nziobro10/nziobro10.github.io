@@ -4,75 +4,54 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet"">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body,h1 {font-family: 'Barlow Semi Condensed', sans-serif;}
-h1 {letter-spacing: 3px}
+body,h1 {font-family: "Raleway", Arial, sans-serif}
+h1 {letter-spacing: 2px}
 .w3-row-padding img {margin-bottom: 12px}
 </style>
 <script>
-	var sounds = document.getElementsByTagName('audio');
-	var buttons = document.getElementsByClassName("w3-button");
 function play(id) {
-    stop();
+	var sounds = document.getElementsByTagName('audio');
+    for(i=0; i<sounds.length; i++) sounds[i].pause();
     var audio = document.getElementById(id);
-	var button = document.getElementById("b" + id);
-	
     if (audio.paused) {
 		audio.currentTime = 0;
         audio.play();
-		button.style.background = 'white';
-		button.style.color = 'black';	
     } else{
 		audio.pause();
 	}
 }
 function stop(){
+	var sounds = document.getElementsByTagName('audio');
     for(i=0; i<sounds.length; i++) sounds[i].pause();
-	for(i=0; i<buttons.length; i++) buttons[i].style.removeProperty("background");
-	for(i=0; i<buttons.length; i++) buttons[i].style.removeProperty("color");
 }
 </script>
-<body class="w3-black">
+<body class="w3-light-gray">
 
 <!-- !PAGE CONTENT! -->
-<div class="w3-content w3-black" style="max-width:1500px">
+<div class="w3-content w3-light-gray" style="max-width:1500px">
 
 <!-- Header -->
-<header id="head" class="w3-panel w3-center w3-black" style="padding:16px 8px">
-  <h1 class="w3-xlarge w3-bold w3-opacity">QDEE - To nie każdy</h1>
-  
-  <!--<img src="images/logo.png">-->
-  <h1 class="w3-medium w3-opacity">[ Odsłuch ]</h1>
-  
+<header class="w3-panel w3-center w3-opacity" style="padding:16px 8px">
+  <h1 class="w3-xlarge w3-bold">QDEE - To nie każdy</h1>
+  <h1 class="w3-medium">[ Odsłuch ]</h1>
   <div>
-    <div class="w3-padding-16 w3-half w3-opacity">
-      <a href="#" onclick="play('1'); return false" class="w3-button w3-block">1. To nie każdy</a>
-      <a href="#" onclick="play('2'); return false" class="w3-button w3-block">2. Dżungla</a>
+    <div class="w3-padding-16">
+      <a href="#" onclick="play('1'); return false" class="w3-button w3-block">1. To nie kazdy</a>
+      <a href="#" onclick="play('2'); return false" class="w3-button w3-block">2. Dzungla</a>
       <a href="#" onclick="play('3'); return false" class="w3-button w3-block">3. Powplatani</a>
       <a href="#" onclick="play('4'); return false" class="w3-button w3-block">4. W przestworzach</a>
-	<a href="#" onclick="play('5'); return false" class="w3-button w3-block">5. Mimo to nie jade na lekach</a>
+	  <a href="#" onclick="play('5'); return false" class="w3-button w3-block">5. Mimo to nie jade na lekach</a>
       <a href="#" onclick="play('6'); return false" class="w3-button w3-block">6. Return</a>
-	  <a href="#" onclick="play('7'); return false" class="w3-button w3-block">7. Online</a>
-	  <a href="#" onclick="play('8'); return false" class="w3-button w3-block">8. Bo lubię</a>
-      <a href="#" onclick="play('9'); return false" class="w3-button w3-block">9. Trzymam sie nurtu</a>
-	  <a href="#" onclick="play('10'); return false" class="w3-button w3-block">10. Nie chcę w tę stronę</a>
-	  <a href="#" onclick="play('11'); return false" class="w3-button w3-block">11. Return 2</a>
-	  <a href="#" onclick="play('12'); return false" class="w3-button w3-block">12. W przestworzach (RMX)</a>
-	  <a href="#" onclick="stop(); return false" class="w3-button w3-block w3-bold w3-large w3-padding-16">WYŁĄCZ TO!</a>
+	  <a href="#" onclick="play('7'); return false" class="w3-button w3-block">7. Bo lubie</a>
+      <a href="#" onclick="play('8'); return false" class="w3-button w3-block">8. Trzymam sie nurtu</a>
+	  <a href="#" onclick="play('9'); return false" class="w3-button w3-block">9. Nie chce w te strone</a>
+	  <a href="#" onclick="play('10'); return false" class="w3-button w3-block">10. Return 2</a>
+	  <a href="#" onclick="play('11'); return false" class="w3-button w3-block">11. W przestworzach (RMX)</a>
+	  <a href="#" onclick="stop(); return false" class="w3-button w3-block w3-bold w3-large w3-padding-16">STOP</a>
     </div>
-	<div class="w3-block w3-half w3-padding-32">
-		<img id="slide" src="images/QDEE.gif" style="width:80%">
-	<!--
-    <img src="/w3images/rocks.jpg" style="width:100%">
-    <img src="/w3images/falls2.jpg" style="width:100%">
-    <img src="/w3images/paris.jpg" style="width:100%">
-    <img src="/w3images/nature.jpg" style="width:100%">
-    <img src="/w3images/mist.jpg" style="width:100%">
-    <img src="/w3images/paris.jpg" style="width:100%">
-	-->
-    </div>	
 	<!-- Audio  Files-->
 		<audio id="1" src="audio/1.mp3"/>
 		<audio id="2" src="audio/2.mp3"/>
@@ -85,7 +64,6 @@ function stop(){
 		<audio id="9" src="audio/9.mp3"/>
 		<audio id="10" src="audio/10.mp3"/>
 		<audio id="11" src="audio/11.mp3"/>
-		<audio id="12" src="audio/12.mp3"/>
 	
 	
   </div>
@@ -93,9 +71,19 @@ function stop(){
 
 <!-- Photo Grid -->
 
-<!--<div class="w3-row-padding w3-grayscale" style="margin-bottom:32px">
-  
-
+<div class="w3-row-padding w3-grayscale" style="margin-bottom:32px">
+  <div class="w3-block w3-center w3-medium">
+    <img src="images/QDEE_COMING_SOON.jpg" style="width:50%">
+	<!--
+    <img src="/w3images/rocks.jpg" style="width:100%">
+    <img src="/w3images/falls2.jpg" style="width:100%">
+    <img src="/w3images/paris.jpg" style="width:100%">
+    <img src="/w3images/nature.jpg" style="width:100%">
+    <img src="/w3images/mist.jpg" style="width:100%">
+    <img src="/w3images/paris.jpg" style="width:100%">
+	-->
+  </div>
+<!--
   <div class="w3-half">
     <img src="/w3images/underwater.jpg" style="width:100%">
     <img src="/w3images/ocean.jpg" style="width:100%">
@@ -104,20 +92,15 @@ function stop(){
     <img src="/w3images/rocks.jpg" style="width:100%">
     <img src="/w3images/underwater.jpg" style="width:100%">
   </div>
-  
+  -->
 </div>
--->
 
   
 <!-- End Page Content -->
-<div id="bio" class="w3-content w3-center w3-opacity w3-padding-32 w3-black" style="width:75%">
+<div id="bio" class="w3-content w3-center w3-opacity" style="width:70%">
 <h1>BIO</h1>
-<p class="w3-justify w3-black">Mówią lepiej późno niż wcale, lepiej zrobić coś i nie żałować później, że się nie zrobiło... (czy jakoś tak). QDEE i Dwaylocos mają zaszczyt zaprezentować pierwszy solowy krążek kudłatego - mc pochodzącego z Ostrowa Wlkp. Wcześniej można było usłyszeć jego głos na kilku produkcjach składu tworzonego z Jaśkiem o nazwie Stonedhigh. Latali, pierdolili, że talenty, że Eldo się jarał maczetą przez dżunglę - dupa nikt nie zadzwonił. Potem była ogarka, rozjazdy, duperele ale zawsze tlił się w nas ten ogień bo jak zwykłem twierdzić czy robisz kupę czy muzykę - rób to do końca. I tak, płyta "To nie każdy" to swego rodzaju przekrój twórczości a niektóre teksty sięgają mniej więcej 2014 roku. Za produkcję muzyczną odpowiada kopiący w dynke jak tequilka duet producencki Dwaylocos. Z pozdrowieniami dla rodziny i najbliższych przyjaciół oraz wszystkich, z którymi skrzyżowały się moje życiowe drogi. Jeśli kochasz hiphop zapraszam do odsłuchu  w nadziei, że znajdziesz coś wartego zapamiętania. W innym wypadku rób jak uważasz - I don't care. Peace!</p>
-
-<a href="#head" class="w3-button w3-block w3-padding-16">--> TRACKLISTA <--</a>
-
+<p>Dwaylocos i QDEE przedstawiają pierwszy solowy album pod tytułem QDEE - To nie każdy. </p>
 </div>
-
 
 <!-- Footer -->
 <footer class="w3-container w3-gray w3-center w3-padding-32 w3-large"> 
