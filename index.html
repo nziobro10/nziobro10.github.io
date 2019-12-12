@@ -1,129 +1,29 @@
 <!DOCTYPE html>
 <html>
-<title>[Odsluch] QDEE to nie każdy</title>
+<title>QDeesing</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet"">
+<link rel="stylesheet" href="css/mystyle.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body,h1 {font-family: 'Barlow Semi Condensed', sans-serif;}
-h1 {letter-spacing: 3px}
-.w3-row-padding img {margin-bottom: 12px}
+body {font-family: "Raleway", Arial, sans-serif}
+.w3-row img {margin-bottom: -8px}
 </style>
-<script>
-	var sounds = document.getElementsByTagName('audio');
-	var buttons = document.getElementsByClassName("w3-button");
-function play(id) {
-    stop();
-    var audio = document.getElementById(id);
-	var button = document.getElementById("b" + id);
+<body class="w3-dark-grey">
+
+
+<div  class="w3-content w3-padding-64 w3-center">
 	
-    if (audio.paused) {
-		audio.currentTime = 0;
-        audio.play();
-		button.style.background = 'white';
-		button.style.color = 'black';	
-    } else{
-		audio.pause();
-	}
-}
-function stop(){
-    for(i=0; i<sounds.length; i++) sounds[i].pause();
-	for(i=0; i<buttons.length; i++) buttons[i].style.removeProperty("background");
-	for(i=0; i<buttons.length; i++) buttons[i].style.removeProperty("color");
-}
-</script>
-<body class="w3-black">
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-content w3-black" style="max-width:1500px">
-
-<!-- Header -->
-<header id="head" class="w3-panel w3-center w3-black" style="padding:16px 8px">
-  <h1 class="w3-xlarge w3-bold w3-opacity">QDEE - To nie każdy</h1>
-  
-  <!--<img src="images/logo.png">-->
-  <h1 class="w3-medium w3-opacity">[ Odsłuch ]</h1>
-  
-  <div>
-    <div class="w3-padding-16 w3-half w3-opacity">
-      <a href="#" onclick="play('1'); return false" class="w3-button w3-block">1. To nie każdy</a>
-      <a href="#" onclick="play('2'); return false" class="w3-button w3-block">2. Dżungla</a>
-      <a href="#" onclick="play('3'); return false" class="w3-button w3-block">3. Powplatani</a>
-      <a href="#" onclick="play('4'); return false" class="w3-button w3-block">4. W przestworzach</a>
-	<a href="#" onclick="play('5'); return false" class="w3-button w3-block">5. Mimo to nie jade na lekach</a>
-      <a href="#" onclick="play('6'); return false" class="w3-button w3-block">6. Return</a>
-	  <a href="#" onclick="play('7'); return false" class="w3-button w3-block">7. Online</a>
-	  <a href="#" onclick="play('8'); return false" class="w3-button w3-block">8. Bo lubię</a>
-      <a href="#" onclick="play('9'); return false" class="w3-button w3-block">9. Trzymam sie nurtu</a>
-	  <a href="#" onclick="play('10'); return false" class="w3-button w3-block">10. Nie chcę w tę stronę</a>
-	  <a href="#" onclick="play('11'); return false" class="w3-button w3-block">11. Return 2</a>
-	  <a href="#" onclick="play('12'); return false" class="w3-button w3-block">12. W przestworzach (RMX)</a>
-	  <a href="#" onclick="stop(); return false" class="w3-button w3-block w3-bold w3-large w3-padding-16">WYŁĄCZ TO!</a>
-    </div>
-	<div class="w3-block w3-half w3-padding-32">
-		<img id="slide" src="images/QDEE.gif" style="width:80%">
-	<!--
-    <img src="/w3images/rocks.jpg" style="width:100%">
-    <img src="/w3images/falls2.jpg" style="width:100%">
-    <img src="/w3images/paris.jpg" style="width:100%">
-    <img src="/w3images/nature.jpg" style="width:100%">
-    <img src="/w3images/mist.jpg" style="width:100%">
-    <img src="/w3images/paris.jpg" style="width:100%">
-	-->
-    </div>	
-	<!-- Audio  Files-->
-		<audio id="1" src="audio/1.mp3"/>
-		<audio id="2" src="audio/2.mp3"/>
-		<audio id="3" src="audio/3.mp3"/>
-		<audio id="4" src="audio/4.mp3"/>
-		<audio id="5" src="audio/5.mp3"/>
-		<audio id="6" src="audio/6.mp3"/>
-		<audio id="7" src="audio/7.mp3"/>
-		<audio id="8" src="audio/8.mp3"/>
-		<audio id="9" src="audio/9.mp3"/>
-		<audio id="10" src="audio/10.mp3"/>
-		<audio id="11" src="audio/11.mp3"/>
-		<audio id="12" src="audio/12.mp3"/>
-	
-	
-  </div>
-</header>
-
-<!-- Photo Grid -->
-
-<!--<div class="w3-row-padding w3-grayscale" style="margin-bottom:32px">
-  
-
-  <div class="w3-half">
-    <img src="/w3images/underwater.jpg" style="width:100%">
-    <img src="/w3images/ocean.jpg" style="width:100%">
-    <img src="/w3images/wedding.jpg" style="width:100%">
-    <img src="/w3images/mountainskies.jpg" style="width:100%">
-    <img src="/w3images/rocks.jpg" style="width:100%">
-    <img src="/w3images/underwater.jpg" style="width:100%">
-  </div>
-  
-</div>
--->
-
-  
-<!-- End Page Content -->
-<div id="bio" class="w3-content w3-center w3-opacity w3-padding-32 w3-black" style="width:75%">
-<h1>BIO</h1>
-<p class="w3-justify w3-black"></p>
-
-<a href="#head" class="w3-button w3-block w3-padding-16">--> TRACKLISTA <--</a>
-
+	<a href="main.html"><img src="images/intro.png" style="width:100%"></a>
+	<div class="w3-white w3-padding-32">
+		<p class="w3-content w3-padding-16" word-spacing=2px>Welcome to QDeesing</p>
+	</div>
 </div>
 
+<!-- Footer / About Section -->
 
-<!-- Footer -->
-<footer class="w3-container w3-gray w3-center w3-padding-32 w3-large"> 
-  <a href="http://www.facebook.com/dwaylocos"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
-  <a href="http://www.youtube.com/dwaylocos"><i class="fa fa-youtube w3-hover-opacity"></i></a>
-</footer>
-
+ 
 </body>
 </html>
+
