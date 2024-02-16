@@ -3,31 +3,20 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 	<style>body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}</style>
 </head>
-
 <body class="w3-light-grey>
-<div class="w3-content" style="max-width:800px">
-	<p>wynik mnożenia:<p id="res"></p></p>
+
+<div id="title">
+	<h1>WELCOME TO PLANTER</h1>
 </div>
-  
-<script>
-	const max = 100;
-	let message = "nie mozna wiecej niz 100"
-    let first = prompt('Tell me your first number');
-    let sec = prompt('Now tell me your second number');
-	if (first > max || sec > max) {
-		alert("you cant tell more than " + max);
-	} else {
-		document.getElementById("res").innerHTML = first * sec;
-	}
-    
+<div id="main">
+	<p id="mainParagraph"></p>
+</div>
+<button type="button" id="addButton" onclick="addPlant()">ADD PLANT!</button>
+
+<script src="js/main.js">
 </script>
 
-
 </body>
-
 </html>
