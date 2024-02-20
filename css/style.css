@@ -8,6 +8,8 @@ body{
     text-align: center;
     font-size: small;
     margin: auto;
+    margin-bottom: 100px;
+    min-height: 400px;
     width: 90%;
 }
 button {
@@ -15,11 +17,11 @@ button {
     border: none;
     border-radius: 5px;
     color: white;
-    padding: 12px 12px;
+    padding: 8px 8px;
     text-align: center;
     text-decoration: 10px;
     display: inline-block;
-    font-size: 12px;
+    font-size: 14px;
 }
 button:hover {
     background-color: black;

@@ -36,7 +36,7 @@ function render(p){
     //console.log("actual : " + actualTime);
     let daysFrom = getDuration(actualTime, lWater);
     //console.log("daysFROM : " + daysFrom)
-    const node = document.createTextNode(values["name"] + " | LAST WATERING : " + values["lastWatering"] + " | DAYS FROM : " + daysFrom + " --> ");
+    const node = document.createTextNode(values["name"] + " | LAST WATERING : " + values["lastWatering"] + " | DAYS FROM : " + daysFrom);
     const newPlant = document.createElement('p');
     if (daysFrom >= maxDaysWithNoWatering){
         newPlant.style.background = "red";
