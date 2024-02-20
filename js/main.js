@@ -37,8 +37,6 @@ function render(p){
     let daysFrom = getDuration(actualTime, lWater);
     //console.log("daysFROM : " + daysFrom)
     const node = document.createTextNode(values["name"] + " | LAST WATERING : " + values["lastWatering"] + " | DAYS FROM : " + daysFrom + " --> ");
-
-
     const newPlant = document.createElement('p').appendChild(node);
     //riseWarningIfNeeded(values["name"],daysFrom, newPlant);
     mainParagraph.appendChild(newPlant);
@@ -65,7 +63,10 @@ function addWateringButton(plantName){
     var button = document.createElement('button');
     button.innerHTML = 'WATERED!';
     button.onclick = function(){
-        populatePlantData(plantName);
+        if (confirm('YOU are a good man:) confirm ??')) {
+            populatePlantData(plantName);
+        }
+
     };
     // where do we want to have the button to appear?
     // you can append it to another element just by doing something like
