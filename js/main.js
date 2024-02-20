@@ -20,9 +20,11 @@ function addPlant() {
         populatePlantData(plant);
         location.reload();
         //alert("PLANT ADDED. REFRESH THE PAGE...");
-    }else{
+    }else if ( localStorage.getItem(plant) != null ){
         alert("PLANT_ALREADY_EXISTS");
         location.reload();
+    }else{
+        alert("PLANT_HAS_NOT_BEEN_ADDED");
     }
 }
 
