@@ -7,7 +7,7 @@ const storageSize = localStorage.length;
 //console.log(storageSize);
 
 if ( storageSize == 0 ){
-    mainParagraph.innerText = "No plants still :(";
+    mainParagraph.innerText = "You have no plants in you garden. Click 'ADD PLANT' to add...";
 }else{
     for (let i = 0; i < storageSize; i++){
         render(localStorage.key(i));
@@ -22,6 +22,7 @@ function addPlant() {
         //alert("PLANT ADDED. REFRESH THE PAGE...");
     }else{
         alert("PLANT_ALREADY_EXISTS");
+        location.reload();
     }
 }
 
@@ -33,19 +34,20 @@ function render(p){
     //console.log("actual : " + actualTime);
     let daysFrom = getDuration(actualTime, lWater);
     //console.log("daysFROM : " + daysFrom)
-    const node = document.createTextNode(values["name"] + " | LAST WATERING : " + values["lastWatering"] + " | DAYS FROM WATERING : " + daysFrom + " --> ");
+    const node = document.createTextNode(values["name"] + " | LAST WATERING : " + values["lastWatering"] + " | DAYS FROM : " + daysFrom + " --> ");
 
 
     const newPlant = document.createElement('p').appendChild(node);
     //riseWarningIfNeeded(values["name"],daysFrom, newPlant);
     mainParagraph.appendChild(newPlant);
     addWateringButton(values["name"]);
+    //addDeleteButton(values["name"]);
     let br = document.createElement("br");
     mainParagraph.appendChild(br);
 }
 
 function clearData() {
-    if (confirm('Are you sure you want to clear data ? It will be LOST...')) {
+    if (confirm('Are you sure you want to clear the data ? All data will be LOST...')) {
         localStorage.clear();
         location.reload();
     }
@@ -66,8 +68,20 @@ function addWateringButton(plantName){
     // where do we want to have the button to appear?
     // you can append it to another element just by doing something like
     mainParagraph.appendChild(button);
-    let br = document.createElement("br");
-    mainParagraph.appendChild(br);
+    //let br = document.createElement("br");
+    //mainParagraph.appendChild(br);
+}
+function addDeleteButton(plantName){
+    var button = document.createElement('button');
+    button.innerHTML = 'DELETE PLANT';
+    button.onclick = function(){
+        deletePlant(plantName);
+    };
+    // where do we want to have the button to appear?
+    // you can append it to another element just by doing something like
+    mainParagraph.appendChild(button);
+    //let br = document.createElement("br");
+    //mainParagraph.appendChild(br);
 }
 function populatePlantData(p){
     let now = new Date();
