@@ -2,12 +2,12 @@ const mainParagraph = document.getElementById("mainParagraph");
 const title = document.getElementById("title");
 const addPlantButton = document.getElementById("addPlant");
 
-const maxDaysWithNo = 4;
+const maxDaysWithNoWatering = 10;
 const storageSize = localStorage.length;
 //console.log(storageSize);
 
 if ( storageSize == 0 ){
-    mainParagraph.innerText = "You have no plants in you garden. Click 'ADD PLANT' to add...";
+    mainParagraph.innerText = "You have no plants in your garden. Click 'ADD PLANT' to add...";
 }else{
     for (let i = 0; i < storageSize; i++){
         render(localStorage.key(i));
@@ -37,8 +37,12 @@ function render(p){
     let daysFrom = getDuration(actualTime, lWater);
     //console.log("daysFROM : " + daysFrom)
     const node = document.createTextNode(values["name"] + " | LAST WATERING : " + values["lastWatering"] + " | DAYS FROM : " + daysFrom + " --> ");
-    const newPlant = document.createElement('p').appendChild(node);
-    //riseWarningIfNeeded(values["name"],daysFrom, newPlant);
+    const newPlant = document.createElement('p');
+    if (daysFrom >= maxDaysWithNoWatering){
+        newPlant.style.background = "red";
+        newPlant.style.color = "white";
+    }
+    newPlant.appendChild(node);
     mainParagraph.appendChild(newPlant);
     addWateringButton(values["name"]);
     //addDeleteButton(values["name"]);
@@ -61,7 +65,7 @@ function getDuration(actual,lastWatering){
 
 function addWateringButton(plantName){
     var button = document.createElement('button');
-    button.innerHTML = 'WATERED!';
+    button.innerHTML = plantName + ' WATERED!';
     button.onclick = function(){
         if (confirm('YOU are a good man:) confirm ??')) {
             populatePlantData(plantName);
@@ -98,12 +102,12 @@ function populatePlantData(p){
 }
 
 // function riseWarningIfNeeded(plantName,daysFromWatering,paragraph){
-//     if (daysFromWatering > maxDaysWithNo){
+//     if (daysFromWatering > maxDaysWithNoWatering){
 //         console.log(paragraph["data"])
 //         //const collection = document.getElementById("mainParagraph").children;
 //         //console.log(collection)
 //         //document.getElementById(JSON.parse(paragraph)).style.color = "red";
-//         //alert("WARNING: " + plantName + " has not been watered since" + maxDaysWithNo.toString() + " days." );
+//         //alert("WARNING: " + plantName + " has not been watered since" + maxDaysWithNoWatering.toString() + " days." );
 //     }
 // }
 
