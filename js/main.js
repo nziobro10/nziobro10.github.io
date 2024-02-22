@@ -35,8 +35,8 @@ function render(p){
     //console.log("lastW: " + lWater);
     //console.log("actual : " + actualTime);
     let daysFrom = getDuration(actualTime, lWater);
-    //console.log("daysFROM : " + daysFrom)
-    const node = document.createTextNode(values["name"] + " | LAST WATERING : " + values["lastWatering"] + " | DAYS FROM : " + daysFrom);
+    //console.log("daysFROM : " + daysFrom);
+    const node = document.createTextNode(values["name"] + " | LAST WATERING : " + new Date(values["lastWatering"]).toLocaleString('en-GB') + " | DAYS FROM : " + daysFrom);
     const newPlant = document.createElement('p');
     if (daysFrom >= maxDaysWithNoWatering){
         newPlant.style.background = "red";
@@ -109,11 +109,4 @@ function populatePlantData(p){
 //         //document.getElementById(JSON.parse(paragraph)).style.color = "red";
 //         //alert("WARNING: " + plantName + " has not been watered since" + maxDaysWithNoWatering.toString() + " days." );
 //     }
-// }
-
-
-
-
-
-
-
+//}

@@ -1,10 +1,12 @@
 h1{
-    font-family: Garamond;
+    font-family: "Lucida Console", "Courier New", sans-serif;
     font-size: x-large;
+    color: #04AA6D;
+    text-shadow: 1px 1px darkgreen;
 }
 body{
     background-color: chartreuse;
-    font-family: Garamond;
+    font-family: "Garamond", "Lucida Console", "Courier New", sans-serif;
     text-align: center;
     font-size: small;
     margin: auto;
