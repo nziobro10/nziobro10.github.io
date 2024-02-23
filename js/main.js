@@ -58,8 +58,7 @@ function clearData() {
 }
 function getDuration(actual,lastWatering){
     let diff = actual - lastWatering;
-    var daysDifference = Math.floor(diff/1000/60/60/24);
-    //var daysDifference = Math.floor(diff/1000/60);
+    var daysDifference = Number.parseFloat(diff/1000/60/60/24).toFixed(1);
     return daysDifference;
 }
 
