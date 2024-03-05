@@ -25,7 +25,7 @@ button {
     text-decoration: 10px;
     display: inline-block;
     font-size: 14px;
-    box-shadow: 1px 2px darkgreen;
+    box-shadow: 1px 2px black;
 }
 button:hover {
     background-color: black;

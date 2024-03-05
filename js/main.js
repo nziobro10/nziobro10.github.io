@@ -16,7 +16,7 @@ if ( storageSize == 0 ){
         //console.log("NAME Z SORTED : " + i + " " + sortedDaysFromArray[i]["name"]);
         //console.log("LW Z SORTED: " + sortedDaysFromArray[i]["lWatering"]);
         render(sortedDaysFromArray[i]["name"],
-            sortedDaysFromArray[i]["lWatering"],
+            sortedDaysFromArray[i]["lastWatering"],
             sortedDaysFromArray[i]["duration"])
     }
 }
@@ -96,7 +96,7 @@ function populatePlantData(p){
     let now = new Date();
     const data = {
         name: p,
-        lWatering: now,
+        lastWatering: now,
         daysFrom: 0
     }
     localStorage.setItem(p, JSON.stringify(data));
@@ -109,12 +109,12 @@ function getSortedDaysFrom(){
     var daysFromArraySorted = [];
     for (let i = 0; i < storageSize; i++){
         let values = JSON.parse(localStorage.getItem(localStorage.key(i)));
-        let lWater = new Date(values["lWatering"]).getTime();
+        let lWater = new Date(values["lastWatering"]).getTime();
         let daysFrom = getDuration(actualTime, lWater);
         var plantItem = {
             id: i,
             name: values["name"],
-            lWatering: values["lWatering"],
+            lastWatering: values["lastWatering"],
             duration: daysFrom
         };
         daysFromArray.push(plantItem);
