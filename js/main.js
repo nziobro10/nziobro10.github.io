@@ -2,23 +2,20 @@ const mainParagraph = document.getElementById("mainParagraph");
 const title = document.getElementById("title");
 const addPlantButton = document.getElementById("addPlant");
 
-const maxDaysWithNoWatering = 12;
+const maxDaysWithNoWatering = 10;
 const storageSize = localStorage.length;
 //console.log(storageSize);
 
 if ( storageSize == 0 ){
     mainParagraph.innerText = "You have no plants in your garden. Click 'ADD PLANT' to add...";
 }else{
-    var sortedDaysFromArray = sortDaysfrom();
-    console.log(sortedDaysFromArray);
-    for ( let i = 0; i < sortedDaysFromArray.length; i++ ){
-        //console.log(localStorage.key(i));
-        render(sortedDaysFromArray[i]["name"], sortedDaysFromArray[i]["duration"])
+    for (let i = 0; i < storageSize; i++){
+        render(localStorage.key(i));
     }
 }
 
 function addPlant() {
-    let plant = prompt("Please enter plant name:", "E.X yucca_rostrata");
+    let plant = prompt("Please enter plant name:", "E.X juka_gloriosa");
     if (plant != null && localStorage.getItem(plant) === null) {
         populatePlantData(plant);
         location.reload();
@@ -31,16 +28,19 @@ function addPlant() {
     }
 }
 
-function render(p, daysFrom){
+function render(p){
     let values = JSON.parse(localStorage.getItem(p));
+    let actualTime = new Date().getTime();
+    let lWater = new Date(values["lastWatering"]).getTime();
     //console.log("lastW: " + lWater);
     //console.log("actual : " + actualTime);
+    let daysFrom = getDuration(actualTime, lWater);
     //console.log("daysFROM : " + daysFrom);
     const node = document.createTextNode(values["name"] + " | LAST WATERING : " + new Date(values["lastWatering"]).toLocaleString('en-GB') + " | DAYS FROM : " + daysFrom);
     const newPlant = document.createElement('p');
     if (daysFrom >= maxDaysWithNoWatering){
         newPlant.style.background = "red";
-        newPlant.style.color = "yellow";
+        newPlant.style.color = "white";
     }
     newPlant.appendChild(node);
     mainParagraph.appendChild(newPlant);
@@ -48,7 +48,6 @@ function render(p, daysFrom){
     //addDeleteButton(values["name"]);
     let br = document.createElement("br");
     mainParagraph.appendChild(br);
-    return daysFrom;
 }
 
 function clearData() {
@@ -57,10 +56,9 @@ function clearData() {
         location.reload();
     }
 }
-
 function getDuration(actual,lastWatering){
     let diff = actual - lastWatering;
-    var daysDifference = Number.parseFloat(diff/1000/60).toFixed(1);
+    var daysDifference = Number.parseFloat(diff/1000/60/60/24).toFixed(1);
     return daysDifference;
 }
 
@@ -71,6 +69,7 @@ function addWateringButton(plantName){
         if (confirm('YOU are a good man:) confirm ??')) {
             populatePlantData(plantName);
         }
+
     };
     // where do we want to have the button to appear?
     // you can append it to another element just by doing something like
@@ -78,7 +77,6 @@ function addWateringButton(plantName){
     //let br = document.createElement("br");
     //mainParagraph.appendChild(br);
 }
-
 function addDeleteButton(plantName){
     var button = document.createElement('button');
     button.innerHTML = 'DELETE PLANT';
@@ -91,7 +89,6 @@ function addDeleteButton(plantName){
     //let br = document.createElement("br");
     //mainParagraph.appendChild(br);
 }
-
 function populatePlantData(p){
     let now = new Date();
     const data = {
@@ -103,39 +100,12 @@ function populatePlantData(p){
     location.reload();
 }
 
-function sortDaysfrom(){
-    var actualTime = new Date().getTime();
-    var daysFromArray = [];
-    for (let i = 0; i < storageSize; i++){
-        let values = JSON.parse(localStorage.getItem(localStorage.key(i)));
-        let lWater = new Date(values["lastWatering"]).getTime();
-        let daysFrom = getDuration(actualTime, lWater);
-        var dict = {
-            id: i,
-            name: values["name"],
-            duration: daysFrom
-        };
-        daysFromArray.push(dict);
-    }
-    return sortingAlgorithm(daysFromArray);
-}
-
-function sortingAlgorithm(array){
-    let result = [];
-    for ( let i = 0; i < array.length; i++){
-        for ( let j = i + 1; j < array.length; j++){
-            let tmp_d = 0;
-            let tmp_id = 0;
-            if ( parseInt(array[i]["duration"]) < parseInt(array[j]["duration"])){
-                tmp_d = array[i]["duration"];
-                array[i]["duration"] = array[j]["duration"];
-                array[j]["duration"] = tmp_d;
-                tmp_id = array[i]["id"];
-                array[i]["id"] = array[j]["id"];
-                array[j]["id"] = tmp_id;
-            }
-        }
-    result.push(array[i]);
-    }
-    return result;
-}
+// function riseWarningIfNeeded(plantName,daysFromWatering,paragraph){
+//     if (daysFromWatering > maxDaysWithNoWatering){
+//         console.log(paragraph["data"])
+//         //const collection = document.getElementById("mainParagraph").children;
+//         //console.log(collection)
+//         //document.getElementById(JSON.parse(paragraph)).style.color = "red";
+//         //alert("WARNING: " + plantName + " has not been watered since" + maxDaysWithNoWatering.toString() + " days." );
+//     }
+//}

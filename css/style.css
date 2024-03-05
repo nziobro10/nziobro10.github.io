@@ -3,7 +3,6 @@ h1{
     font-size: x-large;
     color: #04AA6D;
     text-shadow: 1px 1px darkgreen;
-    text-align: center;
 }
 body{
     background-color: chartreuse;
@@ -16,10 +15,9 @@ body{
     width: 90%;
 }
 button {
-
     background-color: #04AA6D; /* Green */
     border: none;
-    border-radius: 6px;
+    border-radius: 5px;
     color: white;
     padding: 8px 8px;
     text-align: center;
@@ -29,17 +27,18 @@ button {
     box-shadow: 1px 2px darkgreen;
 }
 button:hover {
-    background: url(../images/main.JPG) 0 0 repeat-x;
-    background-size: cover;
+    background-color: black;
+    color: chartreuse;
+}
+button:checked{
+    background-color: blue;
 }
 .footer {
-    background: url(../images/main.JPG);
-    background-position: center;
-    background-size: cover;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    color: black;
+    background-color: #04AA6D;
+    color: white;
     text-align: center;
 }
