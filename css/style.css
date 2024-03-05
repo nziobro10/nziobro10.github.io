@@ -1,8 +1,9 @@
 h1{
     font-family: "Lucida Console", "Courier New", sans-serif;
     font-size: x-large;
-    color: #04AA6D;
-    text-shadow: 1px 1px darkgreen;
+    color: white;
+    background-image: url("../images/main.jpg");
+    text-shadow: 2px 2px black;
 }
 body{
     background-color: chartreuse;
@@ -38,7 +39,7 @@ button:checked{
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #04AA6D;
+    background-image: url("../images/main.jpg");
     color: white;
     text-align: center;
 }
