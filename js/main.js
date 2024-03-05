@@ -10,11 +10,11 @@ if ( storageSize == 0 ){
     mainParagraph.innerText = "You have no plants in your garden. Click 'ADD PLANT' to add...";
 }else{
     var sortedDaysFromArray = getSortedDaysFrom();
-    console.log(sortedDaysFromArray);
+    //console.log(sortedDaysFromArray);
     for ( let i = 0; i < sortedDaysFromArray.length; i++ ){
-        console.log("LOCAL STORAGE: " + i + " " + localStorage.key(i));
-        console.log("NAME Z SORTED : " + i + " " + sortedDaysFromArray[i]["name"]);
-        console.log("LW Z SORTED: " + sortedDaysFromArray[i]["lWatering"]);
+        //console.log("LOCAL STORAGE: " + i + " " + localStorage.key(i));
+        //console.log("NAME Z SORTED : " + i + " " + sortedDaysFromArray[i]["name"]);
+        //console.log("LW Z SORTED: " + sortedDaysFromArray[i]["lWatering"]);
         render(sortedDaysFromArray[i]["name"],
             sortedDaysFromArray[i]["lWatering"],
             sortedDaysFromArray[i]["duration"])

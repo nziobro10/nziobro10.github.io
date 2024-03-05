@@ -16,7 +16,7 @@ body{
     width: 90%;
 }
 button {
-    background-color: #04AA6D; /* Green */
+    background-color: darkgreen; /* Green */
     border: none;
     border-radius: 5px;
     color: white;
